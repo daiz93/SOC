@@ -1,8 +1,8 @@
 <?php
 
+include('connect/Db.class.php');
 
-
-class User
+class User 
 {
    
     /**
@@ -11,33 +11,33 @@ class User
     
      */
 
-    protected $userId;
-    protected $userFirstName;
-    protected $userLastName;
-    protected $userEmail;
-    protected $userPassWord;
+    private $userId;
+    private $userFirstName;
+    private $userLastName;
+    private $userEmail;
+    private $userPassWord;
 
-    protected $userState;
-    protected $userCity;
-    protected $userPhone;
-    protected $userBirthday;
+    private $userCountry;
+    private $userCity;
+    private $userPhone;
+    private $userBirthday;
 
 /**
      * Constructeur de classe 
      *
     
      */
-    function __construct($userId="",$userFirstName="",$userLastName="",$userEmail="",$userPassWord="",$userState="",$userCity="",$userPhone="",$userBirthday="")
+    function __construct()
     {
-      $this->$userId=$userId;
-      $this->$userFirstName=$userFirstName;
-      $this->$userLastName=$userLastName;
-      $this->$userEmail=$userEmail;
-      $this->$userPassWord=$userPassWord;
-      $this->$userState=$userState;
-      $this->$userCity=$userCity;
-      $this->$userPhone=$userPhone;
-      $this->$userBirthday=$userBirthday;
+      $this->userId="";
+      $this->userFirstName="";
+      $this->userLastName="";
+      $this->userEmail="";
+      $this->userPassWord="";
+      $this->userCountry="";
+      $this->userCity="";
+      $this->userPhone="";
+      $this->userBirthday=""; 
 
     }
 
@@ -54,7 +54,7 @@ class User
       $this->$userLastName=$this->$userLastName;
       $this->$userEmail=$this->$userEmail;
       $this->$userPassWord=$this->$userPassWord;
-      $this->$userState=$this->$userState;
+      $this->$userCountry=$this->$userCountry;
       $this->$userCity=$this->$userCity;
       $this->$userPhone=$this->$userPhone;
       $this->$userBirthday=$this->$userBirthday;
@@ -66,18 +66,17 @@ class User
      *
     
      */
-    private setUser($userId,$userFirstName,$userLastName,$userEmail,$userPassWord,$userState,$userCity,$userPhone,$userBirthday)
+    public function setUser($userId="",$userFirstName="",$userLastName="",$userEmail="",$userPassWord="",$userCountry="",$userCity="",$userPhone="",$userBirthday="")
     {
-
-      $this->$userId=$userId;
-      $this->$userFirstName=$userFirstName;
-      $this->$userLastName=$userLastName;
-      $this->$userEmail=$userEmail;
-      $this->$userPassWord=$userPassWord;
-      $this->$userState=$userState;
-      $this->$userCity=$userCity;
-      $this->$userPhone=$userPhone;
-      $this->$userBirthday=$userBirthday;
+      $this->userId=$userId;
+      $this->userFirstName=$userFirstName;
+      $this->userLastName=$userLastName;
+      $this->userEmail=$userEmail;
+      $this->userPassWord=$userPassWord;
+      $this->userCountry=$userCountry;
+      $this->userCity=$userCity;
+      $this->userPhone=$userPhone;
+      $this->userBirthday=$userBirthday;
 
     }
 
@@ -86,27 +85,37 @@ class User
      *
     
      */
-    public getUser(){
+    private function getUser(){
 
     }
 
 
     /**
-     * Ajouter un nouveau compte utilisateur
+     * Se connecte à la base de données pour ajouter un nouveau compte utilisateur
      *
     
      */
-    public addUser(){
-
+    public function addUser() {
+      $db = new DBconnect(DB_HOST, DB_NAME, DB_USER, DB_PASS);
+      $insert   =  $db->query("call addUser (:userFirstName,:userLastName,:userEmail,:userPassWord,:userCountry,:userCity,:userPhone,:userBirthday)", array("userFirstName"=>"$this->userFirstName","userLastName"=>"$this->userLastName","userEmail"=>"$this->userEmail","userPassWord"=>"$this->userPassWord","userCountry"=>"$this->userCountry","userCity"=>"$this->userCity","userPhone"=>"$this->userPhone","userBirthday"=>"$this->userBirthday"));
+      
+      return $insert;
+      // Do something with the data 
+      if($insert > 0 ) {
+        //Succesfully created a new person !
+        return true;
+      }
+      else {return false;} 
+      
     }
 
 
 /**
-     * Mettre à jour les données dans la base de données
+     * Se connecte à la base de données pour mettre à jour les informations de compte d'un utilisateur
      *
     
      */
-    private updateUser(){}
+    public function updateUser(){}
 
 
     /**
@@ -114,7 +123,7 @@ class User
      *
     
      */
-    private getUserInfoById(){}
+    public function getUserInfoById(){}
 
 
 
@@ -123,14 +132,14 @@ class User
      *
     
      */
-    public getUserPoject(){}
+    public function getUserPoject(){}
 
 /**
      * Verifie l'existance d'un compte utilisateur
      *
     
      */
-    public boolean checkUserAccount($userEmail,$userPassWord)
+    public function checkUserAccount()
     {
 
     }

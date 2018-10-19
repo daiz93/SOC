@@ -17,7 +17,7 @@
         <div class="col-lg-2">
           <h5>Projets</h5>
           <ul>
-            <li><a href="start.php">Soumettre</a></li>
+            <li><a href="start">Soumettre</a></li>
             <li><a href="#">Projets encour</a></li>
             <li><a href="#">Les plus aimés</a></li>
             <li><a href="#">Partenaires</a></li>
@@ -40,7 +40,7 @@
             <li><a href="#">Qui sommes-nous ?</a></li>
             <li><a href="#">Notre équipe</a></li>
             <li><a href="#">Ils parlent de nous</a></li>
-            <li><a href="about.php">A propos</a></li>
+            <li><a href="about">A propos</a></li>
             <li><a href="#">Nous contacter</a></li>
           </ul>
         </div>
@@ -62,7 +62,7 @@
           </div>
           <div class="col-lg-6 newsletter">
             S'abonner à la newsletter
-            <form action="index.php" method="post">
+            <form action="index" method="post">
               <input type="text" name="email" id="email-id" placeholder="Entrez votre e-mail" />
               <button type="submit"><i class="fa fa-check"></i></button>
             </form>

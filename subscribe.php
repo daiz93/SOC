@@ -1,196 +1,135 @@
+<?php
+session_start();
+// la variable est definie dans part/head et défini le titre
+ $pageTitle ='Save our communty - Inscription';
+
+ //$success="1";
+
+ // importer la class de connexion à la base de données
+
+ require("class/connect/Db.class.php");
+ 
+ 
+ ?>
+
+
+
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="africa-service">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php include ('part/head.php') ?>
 
-<title>SAVE OUR COMMUNITY</title> 
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <style>
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"]{
+      font-size: 14px;
+    max-width: 100%;
+    padding: 0px 9px;
+    margin-top: auto;
+    font-weight: 400;
+    border-radius: 3px;
+    background: #f7f7f7;
+    border: solid 1px #dfdfdf;
+    }
+  
+  </style>
+<!-- Rediriger veers une page d'inscrititon sans php -->
+<!-- <noscript><meta http-equiv="refresh" content="0, projets.php"></noscript> -->
 
-<!-- Basic Stylesheets -->
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="assets/css/custom-style.css">
-<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
-<!-- Progressbar CSS -->
-<link rel="stylesheet" href="assets/js/pieprogress/css/rainbow.css">
-<link rel="stylesheet" href="assets/js/pieprogress/css/progress.css">
-
-<!-- Revolution Slider CSS -->
-<link rel="stylesheet" type="text/css" href="assets/js/slider-revolution/css/style.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="assets/js/slider-revolution/rs-plugin/css/settings.css" media="screen" />
-
-<!-- Carousels CSS -->
-<link href="assets/js/bxslider/jquery.bxslider.css" rel="stylesheet" />
-
-<!-- Google Fonts & Font-Awesome -->
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:700,300,600,400" rel="stylesheet" type="text/css">
-<link type="text/css" rel="stylesheet" href="assets/css/font-awesome.min.css" />
-<link type="text/css" rel="stylesheet" href="assets/css/icons.css">
-
-<!-- Your Custom Styles -->
-<link rel="stylesheet" type="text/css" href="assets/css/my-styles.css">
-
-<!-- HTML5 Shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
+
 
 <body>
 <div class="wrapper"> 
   <!-- Header -->
-  <header>
-    <div class="container">
-      <div id="logo">
-        <a href="<?php echo $_SERVER['SCRIPT_NAME']; ?>"><img src="assets/images/logo.png" alt="Fundz" /></a>
-        <button type="button" class="collapsed" id="navbar-toggle"><i class="icon fa fa-bars"></i></button>
-      </div>
-      <div class="nav-header-right">
-        <nav class="main-nav">
-          <ul>
-            <li><a href="about.html">Comment ça marche <span>Comment lever des fonds</span></a></li>
-            <li><a href="about.html">A propos <span>Connaitre la plateforme</span></a></li>
-            <li><a href="projects.html">Projets <span>Découvrez les projets en cours</span></a>
-              <ul>
-                <li><a href="projects.html">Projects - Sidebar</a></li>
-                <li><a href="projects-2.html">Projects - Full Width</a></li>
-                <li><a href="project-single.html">Projects Single</a></li>
-              </ul>
-            </li>
-            <li><a href="start.html">Lancer vous <span>soumettre mon projet</span></a></li>
-            <li><a href="#">Pages <span>demo pages</span></a>
-              <ul>
-                <li><a href="index.html">Home</a>
-                  <ul>
-                    <li><a href="index.html">Home Page 1</a></li>
-                    <li><a href="home-2.html">Home Page 2</a></li>
-                  </ul>
-                </li>
-                <li><a href="elements.html">Typography & Elements</a></li>
-                <li><a href="faqs.html">Faq's</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="blog-single.html">Blog Single</a></li>
-                <li><a href="single-page.html">Single Page</a></li>
-                <li><a href="404.html">404 Page</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
+ 
+  <?php 
+  include('part/header-2.php');
+
+ ?>       
+    <section class="gray">
+
+    
+
+    <?php 
+
+if (isset($_SESSION['success'])) {
+
+	?>
+
+ 
+<div class="center-block formlog panel" style="display: block; margin-top:Opx;">
+
+	<div class="panel-heading panel-primary" style="width:100%;">
+	
+		<h6 style="text-align: center; width:100%;" class="panel-title"> Inscription réussie </h6>
+	</div>
+
+<div class="panel-body panel-primary"> 
+  <h5>Félicitation !</h5>
+  <p>Votre compte a été créé et un mail a été envoyé à votre adresse électronique. Veuillez confirmez votre mail pour profiter des avantages de votre plateforme.</p>
+  <p>Merci.</p>
+
+  
+
+  <a href="../SOC" class="btn btn-2 blue center-block"> OK</a>
+
+
+</div>
+
+</div>
+
+  <?php 
+  
+  unset($_SESSION['success']);
+
+} else {
+	
+	?>
+      <div id="form" class="center-block formlog" style="display: block; margin-top:Opx;">
+      <form id="subscribeform" name ="subscribeform" action="actions/newuser.php" method="post">
+        <div class="form-group">
+        <h6 style="text-align: center;">Créer un compte</h6>
+          <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> &nbsp; Se connecter avec Facebook </button>
+          <hr>
+          <p style="text-align: center">OU</p>
+          <div id="htag"></div>
+
+          <span class="row"><input class="form-control" name="email" id="email" placeholder="E-mail" type="e-mail"> </span>
+          <span class="row"><input class="form-control" name="password" id="password" placeholder="Mot de passe" type="password"> </span>
+          <span class="row"><input class="form-control" name="name" id="name" placeholder="Nom" type="text"> </span>
+          <span class="row"><input class="form-control" name="surname" id="surname" placeholder="Prénom" type="text"> </span>
+          <span class="row"><input class="form-control glyphicon-calendar" name="datenaissance" id="datenaissance" placeholder="Date de naissance" type="date">  </span>
+          <span class="row"><input class="form-control" name ="country" id="country" placeholder="Pays" type="text"> </span>
+          <span class="row"><input class="form-control" name ="city" id="city" placeholder="Ville" type="text"> </span>
+          <span class="row"><input class="form-control" name ="phone" id="phone" placeholder="Téléphone" type="tel"> </span>
+          
        
-               <section class="gray">
-            
-                <div class="center-block dropdown-login formlog" style="display: block;">
-                  
-                  <form action="index.html" method="post">
-                    <div class="form-group">
-                      <h3>Créer un compte</h3>
-                      <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> &nbsp; Se connecter avec Facebook </button>
-                      <hr>
-                      <img src="assets/images/or.png" alt="ou">
-                      <input id="email" placeholder="E-mail" type="text">
-                      <input id="password" placeholder="Mot de passe" type="text">
-                      <input id="name" placeholder="Nom" type="text">
-                      <input id="surname" placeholder="Prénom" type="text">
-                      <input id="county" placeholder="Pays" type="text">
-                      <input id="city" placeholder="Ville" type="text">
-                      <input id="phone" placeholder="Téléphone" type="text">
-                      
-                    </div>
-                   
-                    <button type="submit" class="btn btn-2 blue center-block">Valider</button>
-                    <br style="clear:both;">
-                   
-                  </form>
-                </div>
+
+        </div>
+        
+        <input type="submit" name="submit" id="submit" class="btn btn-2 blue center-block" value ="Valider">
+        <br style="clear:both;">
+        
+      </form>
+      </div>
+	<?php 
+}
+
+ ?>
+    
 
 
 
 </section>
               
             </div>    
-  </header>
- 
-  <footer>
-    <div class="container footer-links">
-      <div class="row">
-        <div class="col-lg-4 footer-about">
-          <img src="assets/images/footer-logo.png" alt="Fundz" />
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-      <p>Iincididunt ut labore et dolore magna aliqua. Sed ut perspiciatis unde omnis iste natus.</p>
-          <ul>
-            <li title="Facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li title="Twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li title="Youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-            <li title="LinkedIn"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li title="Google+"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2">
-          <h5>Projects</h5>
-          <ul>
-            <li><a href="#">Send a project</a></li>
-            <li><a href="#">Projects in progress</a></li>
-            <li><a href="#">Projects we Love</a></li>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">How it works</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2">
-          <h5>Important Links</h5>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Faq's</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2">
-          <h5>About Fundz</h5>
-          <ul>
-            <li><a href="#">What is Fundz?</a></li>
-            <li><a href="#">Who we are</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Press</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2">
-          <h5>Contact Info</h5>
-          <ul class="contact-info">
-            <li><i class="fa fa-map-marker"></i> <span>2 Abc Road City, London<br /> UK AB12CD</span></li>
-            <li><i class="fa fa-phone"></i> <span>+44 1234 567890</span></li>
-            <li><i class="fa fa-envelope-o"></i> <span>demo@stackthemes.net</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="copyrights">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 copyright-text">
-            &copy; 2015 Fundz | All rights reserved.
-          </div>
-          <div class="col-lg-6 newsletter">
-            Subscribe for our newsletter
-            <form action="index.html" method="post">
-              <input type="text" name="email" id="email-id" value="Enter your e-mail" />
-              <button type="submit"><i class="fa fa-check"></i></button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
+
+ <?php 
+    include("part/footer.php");
+ ?>
+  
 
 <!-- jQuery (necessary for JavaScript plugins) -->
 <script type="text/javascript" src="assets/js/jquery.js"></script>
@@ -233,5 +172,60 @@
 <!-- Retina Script -->
 <script type="text/javascript" src="assets/js/retina.min.js"></script>
 
+<!-- Lodash Script 
+<script type="text/javascript" src="assets/js/lodash.js"></script> -->
+
+
+<script type="text/javascript" charset="utf-8" async defer>
+
+    $(function(){   
+    
+        //$('body').removeClass('is-loading');
+
+    $('#subscribeform').submit(function(e){
+        
+     e.preventDefault();
+
+     // var $this = $(this);
+      var email = $('#email').val();
+      var password = encodeURIComponent($('#password').val());
+      var name = ($('#name').val());
+      var surname = ($('#surname').val());
+      var country = ($('#country').val());
+      var city = ($('#city').val());
+      var phone = ($('#phone').val());
+      var datenaissance = ($('#datenaissance').val());
+   
+     
+
+        
+ $.post("actions/newuser.php",{email:email,password:password,name:name,surname:surname,datenaissance:datenaissance,country:country,city:city,phone:phone,submit:$('#submit').val()},
+        function(data)
+        {
+          if (data.toString().trim()!="success")
+          {
+            $('#htag').html(data);
+            $('#htag').fadeIn(500);
+            //alert(data);
+          } 
+          else
+              
+          {
+           //	window.location.href="dashboard";
+           $('#form').replaceWith('<div class="center-block formlog panel" style="display:block;margin-top:Opx"><div class="panel-heading panel-primary" style="width:100%"><h6 style="text-align:center;width:100%" class="panel-title"> Inscription réussie</h6></div><div class="panel-body panel-primary"><h5>Félicitation !</h5><p>Votre compte a été créé et un mail a été envoyé à votre adresse électronique. Veuillez confirmez votre mail pour profiter des avantages de votre plateforme.</p><p>Merci.</p><a href="../SOC" class="btn btn-2 blue center-block"> OK</a></div></div>');
+
+          }
+      });
+    
+    //return false;
+
+    });
+
+  });
+      
+</script>
+
+
+	
 </body>
 </html>

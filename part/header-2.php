@@ -2,7 +2,7 @@
 	<header>
     <div class="container">
       <div id="logo">
-        <a href="/saveourcommunity.org"><img src="assets/images/logo.png" alt="Fundz" /></a>
+        <a href="/SOC"><img src="assets/images/logo.png" alt="Fundz" /></a>
         <button type="button" class="collapsed" id="navbar-toggle"><i class="icon fa fa-bars"></i></button>
       </div>
       <div class="nav-header-right">

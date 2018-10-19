@@ -1,6 +1,15 @@
 <?php
 // la variable est definie dans part/head et défini le titre
- $pageTitle ='Save our communty - Plateforme de financement participatif' ?>
+ $pageTitle ='Save our communty - Plateforme de financement participatif';
+
+ // importer la class de connexion à la base de données
+
+ require("class/connect/Db.class.php");
+ 
+ 
+ ?>
+
+
 
 <!DOCTYPE HTML>
 <html lang="fr">
