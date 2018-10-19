@@ -8,18 +8,19 @@ class Category
      *
      */
 
-    protected $categoryId;
-    protected $categoryName;
+    private $categoryId;
+ 
+    private $categoryName;
     
 /**
      * Constructeur de classe 
      *
     
      */
-    function __construct($categoryId="",$categoryName="")
+    function __construct()
     {
-      $this->$categoryId=$categoryId;
-      $this->$categoryName=$categoryName;
+      $this->categoryId=$categoryId;
+      $this->categoryName=$categoryName;
     }
 
     /**
@@ -30,8 +31,8 @@ class Category
 
     function __clone()
     {
-      $this->$categoryId=$this->$categoryId;
-      $this->$categoryName=$this->$categoryName;
+      $this->categoryId=$this->categoryId;
+      $this->categoryName=$this->categoryName;
       
     }
 
@@ -40,11 +41,11 @@ class Category
      *
     
      */
-    private setCategory($categoryId,$categoryName)
+    public function setCategory($categoryId,$categoryName)
     {
 
-      $this->$categoryId=$categoryId;
-      $this->$categoryName=$categoryName;
+      $this->categoryId=$categoryId;
+      $this->categoryName=$categoryName;
       
     }
 
@@ -53,7 +54,7 @@ class Category
      *
     
      */
-    public getCategory(){
+    public function getCategory(){
 
     }
 
@@ -63,7 +64,7 @@ class Category
      *
     
      */
-    public addCategory(){
+    public function addCategory(){
 
     }
 
@@ -73,25 +74,25 @@ class Category
      *
     
      */
-    private updateCategory(){
+    private function updateCategory(){
     	
     }
 
     /**
-     * Retourne un tableau avec les infos de compte
+     * Retourne un tableau avec les infos de la catégorie
      *
     
      */
-    private getCategoryInfoById(){
+    private function getCategoryInfoById(){
 
     }
 
  /**
-     * Récupérer les projets de l'utilisateurs
+     * Récupérer les projets de la catégorie
      *
     
      */
-    public getCategoryPoject(){
+    public function getCategoryPoject(){
 
     }
 
