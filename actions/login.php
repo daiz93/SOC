@@ -9,47 +9,44 @@ require('../class/user.class.php');
 extract($_POST);
 
 
-$userFirstName =htmlspecialchars(trim($name)) ;
-$userLastName =htmlspecialchars(trim($surname)) ;
-$userEmail =htmlspecialchars(trim($email)) ;
+$userFirstName ="";
+$userLastName ="";
+$userEmail =htmlspecialchars(trim($email));
 $userPassWord =htmlspecialchars(trim($password.$userEmail));
-$userBirthday =htmlspecialchars(trim($datenaissance));
-$userCountry =htmlspecialchars(trim($country)) ;
-$userCity =htmlspecialchars(trim($city));
-$userPhone =htmlspecialchars(trim($phone));
+$userBirthday ="";
+$userCountry ="";
+$userCity ="";
+$userPhone ="";
  
 
 
  if (isset($submit)/*  && $submit.toString().toUpper() =="valider" */)
     {
-
+       
         if (empty($userEmail))
             $error="Mail invalide.";
         else
         if (empty($userPassWord))
             $error="Un mot de passe est requis.";
-        else
-        if (empty($userFirstName))
-            $error="Le nom est requis.";
-        else
-        if (empty($userLastName))
-            $error="Le prénom est requis.";
-         else
-         if (empty($userBirthday))
-         $error="La date de naissance est requise.";
-        else
-        if (empty($userCountry))
-            $error="Le pays est requis.";
-        else
-        if (empty($userCity))
-            $error="La ville est requise.";
-        else
-            if (empty($userPhone))
-        $error="Un numéro de téléphone est requis.";
+       
         else
         // Créer un objet 
         {
-            $newUser=new User();
+            $user=new User();
+            $user->setUser('',$userFirstName,$userLastName,$userEmail,$userPassWord,$userCountry,$userCity,$userPhone,$userBirthday);
+            
+            $userdata=$user->checkUserAccount($userEmail,$userPassWord);
+            //$userdata=$userdata->fetch();
+
+            if(empty($userdata))
+            {
+                echo ('Erreur dans les données saisies.');
+            }
+            else 
+            {echo($userdata);}
+die();
+            echo(4);
+            die();
         
             $newUser->setUser('',$userFirstName,$userLastName,$userEmail,$userPassWord,$userCountry,$userCity,$userPhone,$userBirthday);
         // initTo_subscrib($mail,crypt(sha1($password),SHA1("jDcapoKBNKJBVVSKJ65656hgfudbjcJGIFVBKJF5465hjbkjbkvffh5dezd")),$firstname,$lastname,$phonenumber,$state,Date("d/m/Y H:i:s"));

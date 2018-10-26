@@ -24,7 +24,7 @@ dbname = yourdatabase
 <?php
 require("Db.class.php");
 ```
-#### 3. Create the instance 
+#### 3. Create the instance / Créer une instance de connexion
 ```php
 <?php
 // The instance

@@ -341,7 +341,7 @@
   </section>
   
  
-    <?php include('footer.php'); ?>
+    <?php include('part/footer.php'); ?>
   
 </div>
 

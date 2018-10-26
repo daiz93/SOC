@@ -1,5 +1,4 @@
- 
-	<header>
+<header>
     <div class="container">
       <div id="logo">
         <a href="/SOC"><img src="assets/images/logo.png" alt="Fundz" /></a>
@@ -17,20 +16,24 @@
                   <div class="reverse"></div>
                   <div class="box-reverse left"></div>
                   <div class="box-reverse right"></div>
-                  <form action="index.php" method="post">
+                  <form name="signform" id="signform" action="" method="">
                     <div class="form-group">
                       <h3>Se connecter</h3>
                       <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> &nbsp; Se connecter avec Facebook </button>
                       <hr>
-                      <img src="assets/images/or.png" alt="OR" />
-                      <input id="email" type="text" value="Adresse e-mail">
-                      <input id="password" type="text" value="Mot de passe">
+                      <!-- <img src="assets/images/or.png" alt="OR" /> -->
+                      <p style="text-align: center">OU</p>
+                      <div id="htag"></div>
+                      <input id="email" name="email" type="text" placeholder="Adresse e-mail">
+                      <input id="password" id="password" type="text" placeholder="Mot de passe">
                     </div>
                     <span class="text-gray remember"><input type="checkbox" id="remember" value=""> <label for="remember">Se souvenir</label></span>
-                    <button type="submit" class="btn btn-sigin">Connexion!</button>
+                    <input type="submit" name="submit" id="submit" class="btn btn-sigin" value="Connexion !"> </input>
+                    
+                    
                     <br style="clear:both;">
                     <hr><br>
-                    <a class="link" href="#"> Mot de passe oublié ?</a><span class="text-gray">  </span> <a class="link" href="subscribe.php"> S'inscrir</a>
+                    <a class="link" href="#"> Mot de passe oublié ?</a><span class="text-gray">  </span> <a class="link" href="subscribe.php" > S'inscrir</a>
                   </form>
                 </div>
               </li>
@@ -46,5 +49,12 @@
         </div>
       </div>
     </div>
-  </header>
+
+
+
+
+    </header>
+
   
+
+
