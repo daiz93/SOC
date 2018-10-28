@@ -1,92 +1,50 @@
 <?php
-
-class Comment
-{
-   
-    /**
-     * The attributes 
-     *
-     */
-
-    protected $commentId;
-    protected $commentText;
-    public $projectId;
-    
-/**
-     * Constructeur de classe 
-     *
-    
-     */
-    function __construct($commentId="",$commentText="",$projectId="")
-    {
-      $this->$projectId=$projectId;
-      $this->$commentId=$commentId;
-      $this->$commentText=$commentText;    
-
-    }
-
-    /**
-     * Constructeur de copie
-     *
-    
-     */
-
-    function __clone()
-    {
-      $this->$projectId=$this->$projectId;
-      $this->$commentId=$this->$commentId;
-      $this->$commentText=$this->$commentText;
-      
-    }
-
-    /**
-     * Modifier tous les attribues d'un utilisateur
-     *
-    
-     */
-    private setcomment($commentText)
-    {
-
-      $this->$commentText=$commentText;
-      
-    }
-
-    /**
-     * retourne un tableau contenant les attribues du commentaire
-     *
-    
-     */
-    public getcomment($projectIdhttps://www.youtube.com/watch?v=dwVj_g3TpZ4){
-
-    }
+	class Comment
+	{
+		public $commentDate;
+		private $commentId;
+		private $commentContent;
 
 
-    /**
-     * Ajouter un nouveau compte utilisateur
-     *
-    
-     */
-    public addcomment(){
+		/**
+		  * Retourne un commentaire a partir de son identifiant
+		  * @commentId
+		  */
+		final public function getCommentById($commentId) {
+			
+		}
 
-    }
+		/**
+		  * Rteourne l'auteur du commentaire
+		  */
+		final public function getAuthor() {
+			
+		}
 
+		/**
+		  * Supprime un commentaire
+		  * @commentId
+		  */
+		final public function deleteComment($commentId) {
+			
+		}
 
-/**
-     * Mettre à jour les données dans la base de données
-     *
-    
-     */
-    private updatecomment(){
+		/**
+		  * Ajoute un commentaire
+		  * @projectId
+		  */
+		final public function addComment($projectId) {
+			
+		}
+		final  function __construct() {
+			
+		}
+		final  function __clone() {
+			
+		}
+		final  function __destruct() {
+			
+		}
 
-    }
-
-    /**
-     * Retourne un tableau avec les infos de compte
-     *
-    
-     */
-
-
-
-   
-}
+	};
+?>

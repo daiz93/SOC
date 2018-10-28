@@ -2,7 +2,7 @@
   <footer>
     <div class="container footer-links">
       <div class="row">
-        <div class="col-lg-4 footer-about">
+        <div class="col-lg-3 footer-about">
           <img src="assets/images/footer-logo.png" alt="Fundz" />
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
       <p>Iincididunt ut labore et dolore magna aliqua. Sed ut perspiciatis unde omnis iste natus.</p>
@@ -27,22 +27,24 @@
         <div class="col-lg-2">
           <h5>Bon à savoir</h5>
           <ul>
-            <li><a href="#">Actualités</a></li>
-            <li><a href="#">Le crowdfunding</a></li>
+            <li><a href="crowdfunding-financement-participatif-de-projet">Le crowdfunding</a></li>
+            <li><a href="actualites">Actualités</a></li>  
+            <li><a href="a-propos">A propos</a></li>          
             <li><a href="#">Gallerie</a></li>
-            <li><a href="#">Faq</a></li>
+            <li><a href="faqs">Faq</a></li>
             
           </ul>
         </div>
-        <div class="col-lg-2">
-          <h5>A propos</h5>
-          <ul>            
+        <div class="col-lg-3">
+          <h5>Paiement sécurisé</h5>
+          <img src="assets/images/paiement-securiser300x188.png" alt="">
+      <!--     <ul>            
             <li><a href="#">Qui sommes-nous ?</a></li>
             <li><a href="#">Notre équipe</a></li>
             <li><a href="#">Ils parlent de nous</a></li>
             <li><a href="about">A propos</a></li>
             <li><a href="#">Nous contacter</a></li>
-          </ul>
+          </ul> -->
         </div>
         <div class="col-lg-2">
           <h5>Nos contacts</h5>
@@ -75,7 +77,10 @@
 
 
   <!-- jQuery (necessary for JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+
 <script type="text/javascript" src="assets/js/migrate.js"></script>
 
 <!-- Bootstrap Javascript -->
@@ -121,7 +126,35 @@
 <script type="text/javascript" src="assets/js/js.js"></script>
 
 
-
+ 
+<script>
+    var myForm = document.getElementById('signform');
+    
+      myForm.addEventListener('submit', function(e) {
+        //  alert('Vous avez envoyé le formulaire !\n\nMais celui-ci a été bloqué pour que vous ne changiez pas de page.');
+          e.preventDefault();
+  
+          var email = $('#email').val();
+        var password = sha1(encodeURIComponent($('#password').val()));
+        $.post("actions/login.php",{email:email,password:password,submit:$('#submit').val()},
+          function(data)
+          {
+            if (data.toString().trim()!="success")
+            {
+              $('#htag').html(data);
+              $('#htag').fadeIn(1000);
+              //alert(data);
+            } 
+            else              
+            {
+             window.location.reload(true);
+  
+            }
+        });
+      
+  
+      }); 
+</script>
 
 
 

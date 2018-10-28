@@ -1,2 +1,24 @@
 User-agent: *
 Disallow:
+
+
+Disallow: /
+
+Disallow: send_mail.php
+
+Disallow: LICENSE
+
+Disallow: disconnect.php
+
+Disallow: 404.php
+
+Disallow: page-exemple/
+
+Disallow: part/
+
+Disallow: part/actions
+
+Disallow: part/class
+
+
+

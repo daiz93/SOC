@@ -1,2 +1,19 @@
 /*YOUR CUSTOM STYLES*/
 footer{font-size: 14px;}
+
+.n-form input[type="text"], .n-form input[type="password"], .n-form input[type="email"], .n-form input[type="tel"],.n-form input[type="date"]
+{
+    color: #666;
+    width: 290px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    font-size: 14px;
+    max-width: 100%;
+    padding: 0px 9px;
+    margin-top: 15px;
+    font-weight: 400;
+    border-radius: 3px;
+    background: #f7f7f7;
+    border: solid 1px #dfdfdf;
+  }

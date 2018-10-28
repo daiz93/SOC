@@ -1,20 +1,23 @@
+<?php session_start(); ?>
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="fr">
 <head>
 <?php include('part/head.php'); ?>
+
+
 </head>
 
 <body>
 <div class="wrapper"> 
   <!-- ************************ Header ************************ -->
   <header>
-    <?php include('part/header.php'); ?>
+    <?php include('part/header-2.php'); ?>
   </header>
   
   <!-- ************************ Header Bottom | Page Title ************************ -->
   <section class="header-bottom">
     <article>
-      <div class="container"><h3>Démarrer votre projet</h3></div>
+      <div class="container"><h1>Démarrer votre projet</h1></div>
     </article>
   </section>
   <!-- ************************ Breadcrumbs ************************ -->
@@ -22,12 +25,7 @@
     <article class="container">
       <div class="row">
         <div class="col-lg-12">
-          <ul>
-            <li><span class="fa fa-home"></span>&nbsp; You are here:</li>
-            <li><a href="index.html">Home</a></li>
-            <li class="fa fa-angle-right"></li>
-            <li><a href="start.html">Start</a></li>
-          </ul>
+         <h3>Rédiger un projet</h3>
         </div>
       </div>
     </article>
@@ -38,7 +36,13 @@
     <article class="container">
       
       <!-- ************************ Form Area Start ************************ -->
-      
+
+
+        <?php if (isset($_SESSION['user'])): ?>
+
+
+
+  
       <div class="start-project">
         <div class="title">
           <ul>
@@ -53,7 +57,7 @@
           <form action="start.html" method="post" enctype="multipart/form-data">
             
             <div id="basic-data" class="form-wizard active">
-           	            
+                        
               <div class="form-group">
                 <div class="form-left">
                   <input type="text" value="" class="form-control" placeholder="Titre du projet" name="title">
@@ -228,7 +232,15 @@
           </form>
         </div>
       </div>
-      
+
+   <?php else:
+    echo '<div id="form" class="center-block formlog login-panel" style="display: block; margin-top:Opx;">'; 
+      include('part/connexion.php') ; // afficher le formulaire de connexion 
+    echo'</div>';
+    ?>
+        
+
+     <?php endif ?>
       <!-- ************************ Form Area End ************************ -->
       
     </article>
@@ -244,3 +256,7 @@
 
 </body>
 </html>
+
+  
+
+  

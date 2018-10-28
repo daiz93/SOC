@@ -389,6 +389,8 @@
 		float:left;
 	}
 }
+/* Custom by africa-service */
+@media (min-width:1270px){.container{width:1250px}}
 
 @media only screen and (min-width: 1349px) {
 	.popular-details {
@@ -398,6 +400,8 @@
 	.main-slider .progress-section ul li {
 		margin: 0px 24px 0px 0px;
 	}
+
+	
 }
 
 @media only screen and (min-width: 2025px){.arrow-cnt{height: 25px; width: 50px; margin-top: 3px; text-align: right; padding-right: 10px;}}

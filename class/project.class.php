@@ -1,181 +1,155 @@
-<?php 
+<?php
+	/** 
+	 * Les projets
+	 */
 
+	class Project
+	{
+		private $projetcId;
+		private $categoryId;
+		private $projectTitle;
 
-/**
- * 
- */
- class Project 
- {
+		/**
+		  * Une phrase d'accroche
+		  */
+		private $projectSlogan;
 
-    private $projetcId;
-    private $projectTitle;
-    private $projectSlogan;
-    private $projectResume;
-    private $projectStartDatePreview;
-    private $projectStartDateEffectiv;
-    private $projectEndDateEffectiv;
-    private $projectCoverImage;
-    private $projectDuration;
+		/**
+		  * Bref résumé du projet. C'est la 1ere vu du projet avant de l'ouvrir.
+		  */
+		private $projectResume;
 
-    private $isDraft;
-    private $isValidate;
-    private $isPublished;
-    private $numberOfLike;
-    private $numberOfRead;
-     
-    
-    	/**
-     * Constructeur de classe 
-     *
-    
-     */
- 	function __construct()
- 	{
-        $this->projetcId="";
-        $this->projectTitle="";
-        $this->projectSlogan="";
-        $this->projectResume="";
-        $this->projectStartDatePreview="";
-        $this->projectStartDateEffectiv="";
-        $this->projectEndDateEffectiv="";
-        $this->projectCoverImage="";
-        $this->projectDuration="";
-   
-        $this->isDraft="";
-        $this->isValidate="";
-        $this->isPublished="";
-        $this->numberOfLike="";
-        $this->numberOfRead="";
-   
+		/**
+		  * Description détaillée du projet
+		  */
+		private $projectDetail;
 
- 	}
- 
-/**
-     * clone de classe 
-     *
-    
-     */
-     function __clone()
-    {
+		/**
+		  * Date de publication souhaité par le porteur
+		  */
+		private $projectStartDatePreview;
 
-     } 
+		/**
+		  * Date a laquelle le projet à été valider pour publication si elle est postérieur à la date souhaité par le porteur de projet. Si non elle correspondra a la date de publication souhaité par le porteur.
+		  */
+		private $projectStartDateEffectiv;
 
-      /**
-     *Initialisation des propriétés de base de l'ojet
-    
-     */
-     public function setBasicProjectInfo()
-     {
-        $this->projetcId="";
-        $this->projectTitle="";
-        $this->projectSlogan="";
-        $this->projectResume="";
-        $this->projectStartDatePreview="";
-        $this->projectStartDateEffectiv="";
-        $this->projectEndDateEffectiv="";
-        $this->projectCoverImage="";
-        $this->projectDuration="";
-        
-     }
+		/**
+		  * Date de fin effective du projet . Est calculée. Date de début effectuve + Durréé en jour.
+		  */
+		private $projectEndDateEffectiv;
 
-     /**
-     *Initialisation des propriétés d'état de l'ojet
-    
-     */
-     public function setProjectState($isDraft,$isValidate,$isPublished,$numberOfLike,$numberOfRead)
-     {
-        
-        $this->isDraft="";
-        $this->isValidate="";
-        $this->isPublished="";
-        $this->numberOfLike="";
-        $this->numberOfRead="";
-        
-     }
+		/**
+		  * Image de couverture. Doit etre un lien.
+		  */
+		private $projectCoverImage;
 
-      /**
-     * la rédaction du projet est encour. Le projet est un brouillon et 
-     * l'on peut revenir à tout moment y apporter des modifications.
-     *
-    
-     */
+		/**
+		  * Duréé en jour du projet. 
+		  */
+		private $projectDuration;
 
-     public function setProjectIsDraft()
-     {
-        $this->isDraft=true;
-        $this->isValidate=false;
-        $this->isPublished=false;
-        
-     }
+		/**
+		  * Définie l'état valider par la plateforme. Le projet est reconnu valide par la plateforme.
+*isDraft est a true si la rédaction du projet est inachevé. Tout projet démarrer est par défaut isDraft tant que le rédacteur ne signale pas le fin de sa rédaction. seule son auteur peut le voir. isPublished et isValidate ont pour valeur False car ne pouvant pas avoir le meme valeur que isDraft  au même moment
+		  */
+		private $isDraft;
 
+		/**
+		  * Définie l'état valider par la plateforme. Le projet est reconnu valide par la plateforme.
+*isValidate est a true si le rédacteur de projet signale qu'il a finit de rédiger et que le projet peut eêtre publier. Il attend donc validation de la plateforme et la date de publication souhaité. isPublished et isDraft ont pour valeur False car ne pouvant pas avoir le meme valeur que isValidate au même moment
+		  */
+		private $isValidate;
 
-      /**
-     * La rédaction du projet est terminé et le demandeur souhaite qu'elle soit en ligne. Sa mise en ligne 
-     * attend validation par la plateforme et la date de publication souhaité par le demandeur.
-     *
-    
-     */
+		/**
+		  * Définie l'état valider par la plateforme. Le projet est reconnu valide par la plateforme.
+*isPublished est a true si le projet est reconnu valide par la plateforme. Il est donc visible de tous. isValidate et isDraft ont pour valeur False car ne pouvant pas avoir le meme valeur que isPublished au même moment
+		  */
+		private $isPublished;
+		private $numberOfLike;
+		private $numberOfRead;
+		private $monatantALever;
 
-     public function setProjectIsValidate()
-     {
-        $this->isDraft=false;
-        $this->isValidate=true;
-        $this->isPublished=false;
-        
-     }
+		final public function addProject() {
+			
+		}
 
+		/**
+		  * Modifie les information du projet 
+		  */
+		final public function updateProject() {
+			
+		}
+		final public function deleteProject() {
+			
+		}
 
-     /**
-     * Le projet est rédigé et publié.
-     *
-    
-     */
+		/**
+		  * Retourne tous les projets
+		  */
+		final public function getProject() {
+			
+		}
+		final public function getSort($catagory, $isValidate, $isPublished, $success, $down) {
+			
+		}
+		final public function getProjectByUser($iuserId) {
+			
+		}
+		final public function getProjectByCateory($cateorryId) {
+			
+		}
 
-     public function setProjectIsPublished()
-     {
-        $this->isDraft=false;
-        $this->isValidate=false;
-        $this->isPublished=true;
-        
-     }
+		/**
+		  * Modifie tous les attribue de l'objet encour
+		  */
+		final public function setProject() {
+			
+		}
 
+		/**
+		  * Marque la fin de la rédaction
+		  */
+		final public function validateProject() {
+			
+		}
 
-     
-    public function setProject()
-    {
+		/**
+		  * Valide la publication du projet
+		  */
+		final public function publishProject() {
+			
+		}
 
-       
-    }
-    public function getProject()
-    {
+		/**
+		  * renvoie la liste des liens de la gallerie du projet
+		  */
+		final public function getProjectGalleries() {
+			
+		}
 
-       
-    }
+		/**
+		  * renvoie tous les commentaires du projet
+		  */
+		final public function getProjectComments() {
+			
+		}
 
-    public function addProject()
-    {
+		/**
+		  * renvoie toutes les news du projet
+		  */
+		final public function getProjectNews() {
+			
+		}
+		final  function __construct() {
+			
+		}
+		final  function __clone() {
+			
+		}
+		final  function __destruct() {
+			
+		}
 
-       
-    }
-
-    public function addNews()
-    {
-
-       
-    }
-
-    public function addComment()
-    {
-
-       
-    }
-
-    public function addCategory()
-    {
-
-       
-    }
-
-
-    ?>
-
+	};
+?>

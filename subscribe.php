@@ -20,18 +20,28 @@ session_start();
   <?php include ('part/head.php') ?>
 
 
-  <style>
-    input[type="text"], input[type="password"], input[type="email"], input[type="tel"]{
-      font-size: 14px;
+  
+
+
+<style>
+/*Custom by as*/
+
+.n-form input[type="text"], .n-form input[type="password"], .n-form input[type="email"], .n-form input[type="tel"],.n-form input[type="date"]
+{
+    color: #666;
+    width: 290px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    font-size: 14px;
     max-width: 100%;
     padding: 0px 9px;
-    margin-top: auto;
+    margin-top: 15px;
     font-weight: 400;
     border-radius: 3px;
     background: #f7f7f7;
     border: solid 1px #dfdfdf;
-    }
-  
+  }
   </style>
 <!-- Rediriger veers une page d'inscrititon sans php -->
 <!-- <noscript><meta http-equiv="refresh" content="0, projets.php"></noscript> -->
@@ -88,7 +98,7 @@ if (isset($success)) {
 	
 	?>
       <div id="form" class="center-block formlog" style="display: block; margin-top:Opx;">
-      <form id="subscribeform" name ="subscribeform" action="actions/newuser.php" method="post">
+      <form class="n-form" id="subscribeform" name ="subscribeform" action="actions/newuser.php" method="post">
         <div class="form-group">
         <h6 style="text-align: center;">Créer un compte</h6>
           <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> &nbsp; Se connecter avec Facebook </button>
@@ -96,16 +106,14 @@ if (isset($success)) {
           <p style="text-align: center">OU</p>
           <div id="htag"></div>
 
-          <span class="row"><input class="form-control" name="email" id="email" placeholder="E-mail" type="e-mail"> </span>
-          <span class="row"><input class="form-control" name="password" id="password" placeholder="Mot de passe" type="password"> </span>
-          <span class="row"><input class="form-control" name="name" id="name" placeholder="Nom" type="text"> </span>
-          <span class="row"><input class="form-control" name="surname" id="surname" placeholder="Prénom" type="text"> </span>
-          <span class="row"><input class="form-control glyphicon-calendar" name="datenaissance" id="datenaissance" placeholder="Date de naissance" type="date">  </span>
-          <span class="row"><input class="form-control" name ="country" id="country" placeholder="Pays" type="text"> </span>
-          <span class="row"><input class="form-control" name ="city" id="city" placeholder="Ville" type="text"> </span>
-          <span class="row"><input class="form-control" name ="phone" id="phone" placeholder="Téléphone" type="tel"> </span>
-          
-       
+          <input class="form-control" name="email" id="email" placeholder="E-mail" type="email"> 
+          <input class="form-control" name="password" id="password" placeholder="Mot de passe" type="password"> 
+          <input class="form-control" name="name" id="name" placeholder="Nom" type="text"> 
+          <input class="form-control" name="surname" id="surname" placeholder="Prénom" type="text"> 
+          <input class="datepicker" name="datenaissance" id="datenaissance" placeholder="Date de naissance" type="date">  
+          <input class="form-control" name ="country" id="country" placeholder="Pays" type="text"> 
+          <input class="form-control" name ="city" id="city" placeholder="Ville" type="text"> 
+          <input class="form-control" name ="phone" id="phone" placeholder="Téléphone" type="tel"> 
 
         </div>
         
@@ -205,7 +213,7 @@ if (isset($success)) {
           if (data.toString().trim()!="success")
           {
             $('#htag').html(data);
-            $('#htag').fadeIn(1000);
+            $('#htag').fadeIn( "slow" );
             //alert(data);
           } 
           else              
@@ -223,6 +231,9 @@ if (isset($success)) {
   });
       
 </script>
-	
+  
+ 
+
+
 </body>
 </html>

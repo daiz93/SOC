@@ -1,8 +1,11 @@
 <?php
 session_start();
 
-unset($_SESSION['success']);
-
+//unset($_SESSION['success']);
+if (isset( $_SESSION['user']))
+{
+  //echo( $_SESSION['user']);
+}
 
 
 
@@ -520,34 +523,17 @@ unset($_SESSION['success']);
   
 </div>
 
+  
+<script>
+  /*  var myForm = document.getElementById('signform');
+  
+    myForm.addEventListener('submit', function(e) {
+      //  alert('Vous avez envoyé le formulaire !\n\nMais celui-ci a été bloqué pour que vous ne changiez pas de page.');
+        e.preventDefault();
 
-
-
-
-<script type="text/javascript" charset="utf-8" async defer>
-
-    $(function(){   
-    
-        //$('body').removeClass('is-loading');
-
-    $('#signform').submit(function(e){
-        
-     e.preventDefault();
-
-     // var $this = $(this);
-      var email = $('#email').val();
+        var email = $('#email').val();
       var password = sha1(encodeURIComponent($('#password').val()));
-      var name = ($('#name').val());
-      var surname = ($('#surname').val());
-      var country = ($('#country').val());
-      var city = ($('#city').val());
-      var phone = ($('#phone').val());
-      var datenaissance = ($('#datenaissance').val());
-   
-     //alert(sha1("3"));
-    // return;
-
- $.post("actions/newuser.php",{email:email,password:password,name:name,surname:surname,datenaissance:datenaissance,country:country,city:city,phone:phone,submit:$('#submit').val()},
+      $.post("actions/login.php",{email:email,password:password,submit:$('#submit').val()},
         function(data)
         {
           if (data.toString().trim()!="success")
@@ -558,19 +544,16 @@ unset($_SESSION['success']);
           } 
           else              
           {
-           //	window.location.href="dashboard";
-           $('#form').replaceWith('<div class="center-block formlog panel" style="display:block;margin-top:Opx"><div class="panel-heading panel-primary" style="width:100%"><h6 style="text-align:center;width:100%" class="panel-title"> Inscription réussie</h6></div><div class="panel-body panel-primary"><h5>Félicitation !</h5><p>Votre compte a été créé et un mail a été envoyé à votre adresse électronique. Veuillez confirmez votre mail pour profiter des avantages de votre plateforme.</p><p>Merci.</p><a href="../SOC" class="btn btn-2 blue center-block"> OK</a></div></div>');
+           window.location.reload(true);
 
           }
       });
     
-    //return false;
 
-    });
-
-  });
-      
+    });  */
+  
 </script>
+
 
 </body>
 </html>

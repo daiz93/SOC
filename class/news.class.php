@@ -1,93 +1,66 @@
 <?php
+	class News
+	{
+		public $newsId;
+		public $newsTitle;
+		public $newsContent;
+		public $newsDate;
 
-class news
-{   
-    /**
-     * The attributes 
-     *
-     */
+		final public function __destruct() {
+			
+		}
+		final public function addNews() {
+			
+		}
+		final public function deleteNews() {
+			
+		}
+		final public function updateNews() {
+			
+		}
 
-    protected $newsId;
-    protected $newsTitle;
-    protected boolean $isImage;
-    protected boolean $isVideo;
-    protected boolean $isTexte;
-    protected $newsContent;
+		/**
+		  * Modifie le titre de l'objet encour
+		  */
+		final public function setTitle() {
+			
+		}
 
-    
-/**
-     * Constructeur de classe 
-     *
-    
-     */
-    function __construct($newsId="",$newsTitle="",$isImage=false,$isVideo=false,$isTexte=false,$newsContent="")
-    {
-      $this->$newsId=$newsId;
-      $this->$newsTitle=$newsTitle;
-      $this->$isImage=$isImage;
-      $this->$isVideo=$isVideo;
-      $this->$isTexte=$isTexte;
-      $this->$newsContent=$newsContent;
+		/**
+		  * Modifie le contenu de lobjet encour
+		  */
+		final public function setContent() {
+			
+		}
+		final public function getContent() {
+			
+		}
+		final public function getTitle() {
+			
+		}
+		final public function getDate() {
+			
+		}
+		final public function getHour() {
+			
+		}
 
-    }
+		/**
+		  * modifie l'ensemble des attribut de l'objet
+		  * @newsTitle
+		  * @newsContent
+		  * @newsDate
+		  * @newsId
+		  */
+		final public function setNews($newsTitle, $newsContent, $newsDate, $newsId) {
+			
+		}
+		final  function __construct() {
+			
+		}
+		final  function __clone() {
+			
+		}
 
-    /**
-     * Constructeur de copie
-     *
-     */
-
-    function __clone()
-    {
-      $this->$newsId=$this->$newsId;
-      $this->$newsTitle=$this->$newsTitle;
-      $this->$isImage=$this->$isImage;
-      $this->$isVideo=$this->$isVideo;
-      $this->$isTexte=$this->$isTexte;
-      $this->$newsContent=$this->$newsContent;
-      
-    }
-
-    /**
-     * Modifier tous les attribues d'un utilisateur
-     *
-    
-     */
-    private setNews($newsId,$newsTitle,$isImage,$isVideo,$isTexte,$newsContent)
-    {
-
-      $this->$newsId=$newsId;
-      $this->$newsTitle=$newsTitle;
-      $this->$isImage=$isImage;
-      $this->$isVideo=$isVideo;
-      $this->$isTexte=$isTexte;
-      $this->$newsContent=$newsContent;
-      
-    }
-
-    private addNews($newsId)
-    {
-            
-    }
-
-    private updateNews($newsId)
-    {
-            
-    }
-
-    private deleteNews($newsId)
-    {
-            
-    }
-
- /**
-     * Récupérer les projets de la catégorie
-     *
-    
-     */
-    public getNewsByProjet(){
-
-    }
-
-
-   
-}
+	};
+?>
