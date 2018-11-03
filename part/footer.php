@@ -77,7 +77,7 @@
 
 
   <!-- jQuery (necessary for JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
 <script type="text/javascript" src="assets/js/jquery.js"></script>
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
 
@@ -136,9 +136,12 @@
   
           var email = $('#email').val();
         var password = sha1(encodeURIComponent($('#password').val()));
+        
         $.post("actions/login.php",{email:email,password:password,submit:$('#submit').val()},
+         
           function(data)
           {
+           // alert("ok");
             if (data.toString().trim()!="success")
             {
               $('#htag').html(data);

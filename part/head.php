@@ -9,13 +9,15 @@
 <meta name="description" content="">
 <meta name="author" content="africa-service">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACH">
 
+<meta http-equiv="Expires" content="-1" >
 <title><?php echo $pageTitle; ?></title> 
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/cssjquery-ui.structure.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/cssjquery-ui.structure.min.css"> -->
 
 
 <!-- Basic Stylesheets -->

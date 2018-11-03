@@ -2,8 +2,9 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-<?php include('part/head.php'); ?>
+<?php include('part/head.php');?>
 
+<link href="assets/css/wbbtheme.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -117,7 +118,7 @@
               <hr>
 
               <div class="form-group">
-                <textarea name="details" class="form-control" placeholder="Détails du projet"></textarea>
+                <textarea name="details" class="form-control" id="detail" placeholder="Détails du projet"></textarea>
               </div>
               
               <div class="next-btn"><button type="button" class="btn btn-4 blue" data-link="social-media" onClick="moveform(this,'social-media')">Suivant</button></div>
@@ -253,6 +254,18 @@
    <?php include('part/footer.php'); ?>
   </div>
 
+  <script src="assets/js/wysybb/fr.js"></script>
+  <script src="assets/js/wysybb/jquery.wysibb.min.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+     var wbbOpt = {
+    buttons: "bold,italic,underline,|,fontsize,fontfamily,fontcolor,|,justifyleft,justifycenter,justifyright,|,bullist,numlist,|,img,video,link,|,quote"
+    ,lang:"fr"} 
+    $("#detail").wysibb( wbbOpt );
+    });
+  </script>
 
 </body>
 </html>

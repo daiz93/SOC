@@ -18,8 +18,6 @@ $userCountry ="";
 $userCity ="";
 $userPhone ="";
 
-
-
  if (isset($submit)/*  && $submit.toString().toUpper() =="valider" */)
     {
        
@@ -33,11 +31,14 @@ $userPhone ="";
             else
                     // Créer un objet 
                 {
+
+
                         //echo($userPassWord); echo ('<br> 142026E65D8A18F37C5ECB959FCB1E93C9DF9367'.$userEmail); die();
                         $user=new User();
                         $user->setUser('',$userFirstName,$userLastName,$userEmail,$userPassWord,$userCountry,$userCity,$userPhone,$userBirthday);
                         $userdata=$user->checkUserAccount($userEmail,$userPassWord);
                         //$userdata=$userdata->fetch();
+
                         if(empty($userdata))
                         {
                             $error='Mail ou mot de passe incorrecte.';
@@ -68,7 +69,8 @@ $userPhone ="";
                         
                         
                             echo ('success');
-
+                            // echo($_SESSION['user']);
+                            die();
                             return;
                         }
 
