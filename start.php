@@ -55,27 +55,27 @@
         </div>
         <hr>
         <div class="start-content">
-          <form action="start.html" method="post" enctype="multipart/form-data">
+          <form action="#" method="post" enctype="multipart/form-data">
             
             <div id="basic-data" class="form-wizard active">
                         
               <div class="form-group">
                 <div class="form-left">
-                  <input type="text" value="" class="form-control" placeholder="Titre du projet" name="title">
+                  <input type="text"  class="form-control" placeholder="Titre du projet" name="title">
                 </div>
                 <div class="form-right">
-                  <input type="text" value="" class="form-control" placeholder="Montant à collecter" name="money">
+                  <input type="text"  class="form-control" placeholder="Montant à collecter" name="money">
                 </div>
                 <div class="clear"></div>
               </div>
             
               <div class="form-group">
                 <div class="form-left">
-                  <input type="text" value="" class="form-control" placeholder="Phrase d'acroche" name="tagline">
+                  <input type="text"  class="form-control" placeholder="Phrase d'acroche" name="tagline">
                 </div>
                 <div class="form-right">
                   <select class="form-control arrow-down" name="category">
-                    <option value="">Selectionné une catégorie</option>
+                    <option >Selectionné une catégorie</option>
                     <option value="Animals">Animals</option>
                     <option value="Community">Community</option>
                     <option value="Education">Education</option>
@@ -89,11 +89,11 @@
             
               <div class="form-group">
                 <div class="form-left">
-                  <input type="text" value="" class="form-control" placeholder="Deadline - Funding ends" name="date">
+                  <input type="text"  class="form-control" placeholder="Deadline - Funding ends" name="date">
                 </div>
                 <div class="form-right">
                     <select class="form-control arrow-down" name="recipient">
-                    <option value="">Bénéficaires</option>
+                    <option >Bénéficaires</option>
                     <option value="An Individual">An Individual</option>
                     <option value="A Business">A Business</option>
                     <option value="A Nonprofit">A Nonprofit</option>
@@ -105,7 +105,7 @@
               
               <div class="form-group">
                 <div class="form-left selectimage" id="imguploadbasic-1">
-                  <input type="text" value="" class="form-control" placeholder="Project Image">
+                  <input type="text"  class="form-control" placeholder="Project Image">
                   <button type="button" class="imageUploadBtn">Photo de couverture</button>
                   <input type="file" name="basicimg[]" />
                 </div>
@@ -129,20 +129,20 @@
               
               <div class="form-group">
                 <div class="form-left">
-                  <input type="url" value="" class="form-control" placeholder="Facebook" name="fb">
+                  <input type="url"  class="form-control" placeholder="Facebook" name="fb">
                 </div>
                 <div class="form-right">
-                  <input type="url" value="" class="form-control" placeholder="Twitter" name="tw">
+                  <input type="url"  class="form-control" placeholder="Twitter" name="tw">
                 </div>
                 <div class="clear"></div>
               </div>
               
               <div class="form-group">
                 <div class="form-left">
-                  <input type="url" value="" class="form-control" placeholder="Youtube" name="yt">
+                  <input type="url"  class="form-control" placeholder="Youtube" name="yt">
                 </div>
                 <div class="form-right">
-                  <input type="url" value="" class="form-control" placeholder="Site web" name="web">
+                  <input type="url"  class="form-control" placeholder="Site web" name="web">
                 </div>
                 <div class="clear"></div>
               </div>
@@ -157,20 +157,20 @@
               <div id="perk-elements">
                 <div class="form-group">
                   <div class="form-left">
-                    <input type="text" value="" class="form-control" placeholder="Libellé" name="perk-title[]">
+                    <input type="text"  class="form-control" placeholder="Libellé" name="perk-title[]">
                   </div>
                   <div class="form-right">
-                    <input type="text" value="" class="form-control" placeholder="Montant minimal" name="price[]">
+                    <input type="text"  class="form-control" placeholder="Montant minimal" name="price[]">
                   </div>
                   <div class="clear"></div>
                 </div>
                 
                 <div class="form-group">
                   <div class="form-left">
-                    <input type="text" value="" class="form-control" placeholder="Quantité" name="perk-title[]">
+                    <input type="text"  class="form-control" placeholder="Quantité" name="perk-title[]">
                   </div>
                   <div class="form-right">
-                    <input type="text" value="" class="form-control" placeholder="Date d'envoie prévisionnelle" name="senddate[]">
+                    <input type="text"  class="form-control" placeholder="Date d'envoie prévisionnelle" name="senddate[]">
                   </div>
                   <div class="clear"></div>
                 </div>
@@ -203,7 +203,7 @@
               <div id="video-inputs" class="imgORvid">
                 <div class="form-group">
                   <div class="form-left" style="width:100%;">
-                    <input type="text" value="" class="form-control" placeholder="Lien de votre vidéo" name="title">
+                    <input type="text"  class="form-control" placeholder="Lien de votre vidéo" name="title">
                   </div>
                   <div class="clear"></div>
                 </div>
@@ -213,7 +213,7 @@
                 <div class="form-group">
                   <div id="image-field-cnt">
                     <div class="form-left selectimage" id="imgupload-1">
-                      <input type="text" value="" class="form-control" placeholder="Sélectionner une image sur mon disque">
+                      <input type="text"  class="form-control" placeholder="Sélectionner une image sur mon disque">
                       <button type="button" class="imageUploadBtn">Sélectionner</button>
                       <input type="file" name="galleryimg[]" />
                     </div>

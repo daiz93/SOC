@@ -45,9 +45,12 @@ $userPhone ="";
                         }
                         else 
                         {//print_r($userdata);
-                            session_destroy(); //Détruire la session encour
-                            session_start(); // Démarrer une sessiosn à configurer
-                            $lifetime=2592000;//La session durera un mois
+                            //session_destroy(); //Détruire la session encour
+
+                           
+                            
+                            //session_start(); // Démarrer une sessiosn à configurer
+                            $lifetime=172800;//La session durera 48h
                             $sessionId=session_id();
 
                             setcookie(session_name(),$sessionId,time()+$lifetime,null,null,false,true);

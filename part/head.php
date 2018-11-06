@@ -2,23 +2,17 @@
 // Définir le titre de la page en changeant la valeur de $pageTitle
  $pageTitle ='Save our communty - Plateforme de financement participatif' ?>
 
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="africa-service">
+<meta name="keywords" content="Fundz HTML5 Template">
+<meta name="description" content="Fundz is a HTML5 Responsive Crowdfunding Template">
+<meta name="author" content="stackthemes.net">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACH">
 
-<meta http-equiv="Expires" content="-1" >
-<title><?php echo $pageTitle; ?></title> 
+<title><?php echo "$pageTitle"; ?></title> 
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/cssjquery-ui.structure.min.css"> -->
-
 
 <!-- Basic Stylesheets -->
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -49,8 +43,3 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<style>
- 
-</style>
-

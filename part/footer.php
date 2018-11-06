@@ -74,14 +74,22 @@
     </div>
   </footer>
 
-
-
-  <!-- jQuery (necessary for JavaScript plugins) -->
-  
-<script type="text/javascript" src="assets/js/jquery.js"></script>
-<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
-
+ <!-- jQuery (necessary for JavaScript plugins) -->
+<!-- <script type="text/javascript" src="assets/js/jquery.js"></script>
 <script type="text/javascript" src="assets/js/migrate.js"></script>
+ -->
+
+ <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-migrate-3.0.1.min.js"></script>
+
+<!-- Get from code
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script> -->
+
+
 
 <!-- Bootstrap Javascript -->
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -128,7 +136,7 @@
 
  
 <script>
-    var myForm = document.getElementById('signform');
+    /* var myForm = document.getElementById('signform');
     
       myForm.addEventListener('submit', function(e) {
         //  alert('Vous avez envoyé le formulaire !\n\nMais celui-ci a été bloqué pour que vous ne changiez pas de page.');
@@ -156,7 +164,7 @@
         });
       
   
-      }); 
+      });  */
 </script>
 
 

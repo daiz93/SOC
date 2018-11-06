@@ -24,7 +24,7 @@
 
                 </div>
               </li>
-              <li><a href="subscribe.php" class="btn btn-4 blue">S'inscrir</a></li>
+              <li><a href="inscription.php" class="btn btn-4 blue">S'inscrir</a></li>
             </ul>
           <?php else: ?>
             <a href="disconnect.php" class="btn btn-4 blue">Se déconnecter</a>
